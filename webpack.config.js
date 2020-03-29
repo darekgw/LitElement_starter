@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const env = process.env.NODE_ENV;
 
 module.exports = {
-  entry: "./js/app.js",
+  entry: "./packages/app/root-element.js",
 
   mode: env,
 
@@ -24,8 +24,7 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: "babel-loader"
@@ -43,9 +42,6 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./public/index.html"
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin()
   ]
