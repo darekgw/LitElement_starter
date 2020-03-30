@@ -1,7 +1,7 @@
 {
-  "name": "WC",
+  "name": "lit-element-starter",
   "version": "1.0.0",
-  "description": "Web-components with LitElement library template. Package.json configuration based on Minimal webpack boilerplate with HMR and sass by João Vilaça.",
+  "description": "Web-components with LitElement library project starter",
   "main": "js/app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --colors",

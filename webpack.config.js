@@ -1,8 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 const env = process.env.NODE_ENV;
 
 module.exports = {
@@ -25,24 +23,13 @@ module.exports = {
 
   module: {
     rules: [{
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: "babel-loader"
-      },
-      {
-        test: /\.(sc|c)ss$/,
-        use: [
-          env == "development" ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
-      }
-    ]
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: "babel-loader"
+    }]
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new MiniCssExtractPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
